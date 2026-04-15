@@ -1,0 +1,16 @@
+{
+    "name": "examen-Final PROG1",
+    "version": "1.0.0",
+    "description": "Examen final pour le cours PROG1",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "author": "DevMonstra",
+    "dependencies": {
+        "fs": "^0.0.1-security",
+        "http": "^0.0.1-security",
+        "path": "^0.12.7"
+    }
+}
