@@ -1,5 +1,3 @@
-import { useSyncExternalStore } from "react";
-
 export function slugify(title) {
   return title
     .toLowerCase()
