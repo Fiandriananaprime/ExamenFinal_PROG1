@@ -1,5 +1,5 @@
 {
-    "name": "examen-Final PROG1",
+    "name": "examen-final-prog1",
     "version": "1.0.0",
     "description": "Examen final pour le cours PROG1",
     "main": "index.js",
@@ -12,5 +12,16 @@
         "fs": "^0.0.1-security",
         "http": "^0.0.1-security",
         "path": "^0.12.7"
-    }
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Fiandriananaprime/ExamenFinal_PROG1.git"
+    },
+    "keywords": [],
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Fiandriananaprime/ExamenFinal_PROG1/issues"
+    },
+    "homepage": "https://github.com/Fiandriananaprime/ExamenFinal_PROG1#readme"
 }
