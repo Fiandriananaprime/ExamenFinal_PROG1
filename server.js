@@ -38,3 +38,4 @@ const startServer = (port = 3000) => {
         console.log(`💡 Appuyez sur Ctrl+C pour arrêter.`);
     });
 };
+export { startServer };
