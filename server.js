@@ -4,13 +4,13 @@ import fs from 'fs';
 
 
 const startServer = (port = 3000) => {
-    const DIST_DIR = './dist';
+    const distDir = './dist';
 
 
     // Création du serveur
-    const SERVER = http.createServer((request, response) => {
+    const server = http.createServer((request, response) => {
         let filePath = request.url === '/' ? '/index.html' : request.url;
-        const fullPath = path.join(process.cwd(), DIST_DIR, filePath);
+        const fullPath = path.join(process.cwd(), distDir, filePath);
 
 
         fs.readFile(fullPath, (err, content) => {
@@ -20,10 +20,10 @@ const startServer = (port = 3000) => {
                 return;
             }
             // Détection extension
-            const EXT = path.extname(fullPath);
+            const ext = path.extname(fullPath);
 
 
-            response.writeHead(200, { 'Content-Type': EXT === '.html' ? 'text/html' : 'text/plain' });
+            response.writeHead(200, { 'Content-Type': ext === '.html' ? 'text/html' : 'text/plain' });
 
 
              // Envoi du contenu
@@ -33,8 +33,10 @@ const startServer = (port = 3000) => {
 
 
 // Démarrage du serveur
-    SERVER.listen(port, () => {
+    server.listen(port, () => {
         console.log(`🌍 Serveur démarré sur http://localhost:${port}`);
         console.log(`💡 Appuyez sur Ctrl+C pour arrêter.`);
     });
 };
+
+export default startServer;

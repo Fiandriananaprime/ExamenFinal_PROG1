@@ -1,10 +1,9 @@
-const layout = (title, content) => {
-  return `
+
   <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>${title}</title>
+    <title>À Propos</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; background: #f4f7f6; }
         nav { background: #2c3e50; padding: 15px; border-radius: 8px; margin-bottom: 30px; display: flex; gap: 20px; }
@@ -23,11 +22,8 @@ const layout = (title, content) => {
         <a href="stats.html">📊 Stats</a>
         <a href="a-propos.html">ℹ️ À Propos</a>
     </nav>
-    <main>${content}</main> 
+    <main><h1>À propos</h1><p>Ce projet démontre un des potentiels utilisation de Node.js. Finalement, la limite restera toujours votre créativité et imagination. Cela dit, il faut Penser, Travailler et Impacter ! </p></main> 
     <footer>Propulsé par Node.js - Examen final PROG1 avril 2026</footer>
 </body>
 </html>
-  `;
-}
-
-export { layout };
+  
