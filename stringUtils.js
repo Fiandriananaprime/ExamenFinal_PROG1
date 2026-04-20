@@ -23,4 +23,11 @@ export function countWords(str) {
   return str.trim().split(/\s+/).length;
 }
 
-
+export function escapeHTML(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
