@@ -1,5 +1,5 @@
-import { build } from "./builder.js";
-import { startServer } from "./server.js";
+import { build } from "./builder";
+import { startServer } from "./server";
 
 build();
-startServer();
+startServer(3000);
