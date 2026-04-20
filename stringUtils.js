@@ -7,3 +7,12 @@ export function slugify(title) {
     .trim()
     .replace(/\s+/g, "-");
 }
+
+export function truncate(str, maxLength) {
+  if (str.length <= maxLength) return str;
+
+  const trimmed = str.slice(0, maxLength);
+  const lastSpace = trimmed.lastIndexOf("");
+  const cut = lastSpace > 0 ? trimmed.slice(0, lastSpace) : trimmed;
+  return cut + "...";
+}
