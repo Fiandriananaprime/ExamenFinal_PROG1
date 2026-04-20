@@ -67,7 +67,7 @@ export const build = () => {
     <div class="card">
       <h2>${escapeHTML(a.title)}</h2>
       <p>${truncate(a.content, 100)}</p>
-      <a href="${slugify(a.title)}.html" class="read-more">Lire l'article →</a>
+      <a href="${slugify(a.title)}.html">Lire l'article</a>
     </div>
   `,
       )
@@ -90,22 +90,14 @@ export const build = () => {
   // Pages articles individuelles
   articles.forEach((art) => {
     const content = `
-  <img class="article-hero" src="data:image/png;base64,${art.image}" >
-  <h1>${escapeHTML(art.title)}</h1>
-  <p class="article-meta">Par <strong>${art.author}</strong> · ${art.date}</p>
-  <div class="article-body">${art.content}</div>
-`;
+      <img src="data:image/png;base64,${art.image}" style="width:100%; border-radius:8px;">
+      <h1>${escapeHTML(art.title)}</h1>
+      <p><em>Par ${art.author} le ${art.date}</em></p>
+      <div style="background: white; padding: 20px; border-radius: 8px;">${art.content}</div>
+    `;
     fs.writeFileSync(
-      `${dist}/a-propos.html`,
-      layout(
-        "À Propos",
-        `
-  <h1>À propos</h1>
-  <div class="about-box">
-    Ce projet démontre un des potentiels utilisation de Node.js. Finalement, la limite restera toujours votre créativité et imagination. Cela dit, il faut Penser, Travailler et Impacter !
-  </div>
-`,
-      ),
+      `${dist}/${slugify(art.title)}.html`,
+      layout(art.title, content),
     );
   });
 
