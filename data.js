@@ -63,5 +63,3 @@ export const articles = [
     date: "2026-04-02",
   },
 ];
-
-export { articles };
