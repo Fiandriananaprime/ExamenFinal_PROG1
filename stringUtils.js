@@ -1,3 +1,5 @@
+import { useSyncExternalStore } from "react";
+
 export function slugify(title) {
   return title
     .toLowerCase()
@@ -16,3 +18,9 @@ export function truncate(str, maxLength) {
   const cut = lastSpace > 0 ? trimmed.slice(0, lastSpace) : trimmed;
   return cut + "...";
 }
+
+export function countWords(str) {
+  return str.trim().split(/\s+/).length;
+}
+
+
