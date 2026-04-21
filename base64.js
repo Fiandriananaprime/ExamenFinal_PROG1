@@ -10,4 +10,3 @@ const decodeBase64ToImage = (base64String, outputPath) => {
 };
 
 export { encodeImageToBase64, decodeBase64ToImage };
-
