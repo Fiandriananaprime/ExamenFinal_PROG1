@@ -1,5 +1,6 @@
 export function layout(title, content) {
-  return `<!DOCTYPE html>
+  return `
+  <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -22,8 +23,9 @@ export function layout(title, content) {
         <a href="stats.html">📊 Stats</a>
         <a href="a-propos.html">ℹ️ À Propos</a>
     </nav>
-    <main>${content}</main>
+    <main>${content}</main> 
     <footer>Propulsé par Node.js - Examen final PROG1 avril 2026</footer>
 </body>
-</html>`;
+</html>
+  `;
 }
