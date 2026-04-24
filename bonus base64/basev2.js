@@ -1,4 +1,4 @@
-const fs = require("fs");
+import fs from "fs";
 
 const BASE64_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
