@@ -8,17 +8,13 @@ if (!fs.existsSync(dist)) {
   fs.mkdirSync(dist);
 }
 
-// --- Page STATISTIQUES ---
 function generateStatsPage(data) {
   const nbrArticles = data.length;
 
-  // Total de mots sur tout le blog
   const totalWords = data.reduce((sum, a) => sum + countWords(a.content), 0);
 
-  // Moyenne de mots par article (arrondie)
   const avgWords = Math.round(totalWords / nbrArticles);
 
-  // Auteur le plus actif : on compte les articles par auteur
   const authorCount = {};
   for (const a of data) {
     authorCount[a.author] = (authorCount[a.author] || 0) + 1;
@@ -39,7 +35,6 @@ function generateStatsPage(data) {
   return layout("Statistiques", body);
 }
 
-// --- Page ARCHIVES ---
 function generateArchivesPage(data) {
   const list = data
     .map(
@@ -56,9 +51,7 @@ function generateArchivesPage(data) {
   return layout("Archives", `<h1>Tous les articles</h1><ul>${list}</ul>`);
 }
 
-// --- Fonction principale build ---
 export const build = () => {
-  // Page Accueil
   const indexBody =
     `<h1>Dernières publications</h1>` +
     articles
@@ -87,7 +80,6 @@ export const build = () => {
     ),
   );
 
-  // Pages articles individuelles
   articles.forEach((art) => {
     const content = `
       <img src="data:image/png;base64,${art.image}" style="width:100%; border-radius:8px;">
