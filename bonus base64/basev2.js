@@ -48,6 +48,6 @@ function decodeBase64ToImage(base64String, outputPath) {
   console.log(`Image sauvegardée : ${outputPath}`);
 }
 
-const base64 = encodeImageToBase64("./bonus base64/blackhole.png");
+const base64 = encodeImageToBase64("./bonus base64/blackcat.jpg");
 console.log(base64);
-decodeBase64ToImage(base64, "blackhole_reconstruite1.png");
+decodeBase64ToImage(base64, "blackcat_decoded.png");

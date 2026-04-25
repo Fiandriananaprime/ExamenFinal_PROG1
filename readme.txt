@@ -1,6 +1,8 @@
 ##Information du Groupe
 Groupe N1
-STD2500
+
+STD25001
+RAFANOMEZANTSOA Ny Fatratra
 
 STD25027 
 ANDRIANARIMANANA Isaac Abderman
