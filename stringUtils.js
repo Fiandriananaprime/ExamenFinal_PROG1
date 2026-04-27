@@ -3,6 +3,7 @@ export function slugify(title) {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
+    .replace(/['’]/g, " ")
     .replace(/[^a-z0-9\s-]/g, "")
     .trim()
     .replace(/\s+/g, "-");
@@ -11,14 +12,15 @@ export function slugify(title) {
 export function truncate(str, maxLength) {
   if (str.length <= maxLength) return str;
 
-  const trimmed = str.slice(0, maxLength);
-  const lastSpace = trimmed.lastIndexOf("");
+  const trimmed = str.slice(0, maxLength).trimEnd();
+  const lastSpace = trimmed.lastIndexOf(" ");
   const cut = lastSpace > 0 ? trimmed.slice(0, lastSpace) : trimmed;
-  return cut + "...";
+  return `${cut}...`;
 }
 
 export function countWords(str) {
-  return str.trim().split(/\s+/).length;
+  const words = str.trim().match(/\S+/g);
+  return words ? words.length : 0;
 }
 
 export function escapeHTML(str) {
